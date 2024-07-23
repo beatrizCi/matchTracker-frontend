@@ -1,0 +1,23 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+  <mat-form-field appearance="fill" fxFlex="100%" fxFlex.gt-sm="50%">
+    <mat-label>Match Day</mat-label>
+    <mat-select [(value)]="matchDay" (selectionChange)="onMatchDayChange()">
+      <mat-option *ngFor="let day of [1, 2, 3, 4, 5]" [value]="day">{{
+        day
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div
+    class="match-cards"
+    fxLayout="row"
+    fxLayoutWrap="wrap"
+    fxLayoutAlign="start center"
+    fxLayoutGap="16px"
+  >
+    <app-match-card
+      *ngFor="let match of matches"
+      [match]="match"
+    ></app-match-card>
+  </div>
+</div>

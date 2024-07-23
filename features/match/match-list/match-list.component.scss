@@ -1,0 +1,12 @@
+.match-cards {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  .match-cards {
+    justify-content: start;
+  }
+}

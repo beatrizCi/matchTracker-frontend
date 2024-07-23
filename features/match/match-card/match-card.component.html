@@ -1,0 +1,9 @@
+<mat-card fxFlex="100%" fxFlex.gt-sm="45%" fxFlex.gt-md="30%">
+  <mat-card-header>
+    <mat-card-title>{{ match.teamA }} vs {{ match.teamB }}</mat-card-title>
+    <mat-card-subtitle>{{ match.kickOffTime | date:'short' }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Stadium: {{ match.stadium }}</p>
+  </mat-card-content>
+</mat-card>
