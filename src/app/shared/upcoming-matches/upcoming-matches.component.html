@@ -1,1 +1,12 @@
-<p>upcoming-matches works!</p>
+<div class="match-list" *ngIf="matches.length; else noMatches">
+  <div class="match-item" *ngFor="let match of matches">
+    <p><strong>Teams:</strong> {{ match.teamA }} vs {{ match.teamB }}</p>
+    <p>
+      <strong>Kick-Off Time:</strong> {{ match.kickOffTime | date : "short" }}
+    </p>
+    <p><strong>Stadium:</strong> {{ match.stadium }}</p>
+  </div>
+</div>
+<ng-template #noMatches>
+  <p>No matches available for the selected day.</p>
+</ng-template>

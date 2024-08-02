@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,10 +16,10 @@ import { MatchCardComponent } from '../match-card/match-card.component';
 })
 export class MatchListComponent implements OnInit {
   matchDay: number = 1;
-  matches: Match[] = [];
+  selectedMatchDay: number | null = null;
+  @Input() matches: Match[] = [];
 
   constructor(private matchService: MatchService) { }
-
   ngOnInit(): void {
     this.getMatches();
   }
@@ -30,7 +30,21 @@ export class MatchListComponent implements OnInit {
     });
   }
 
-  onMatchDayChange(): void {
-    this.getMatches();
+  onMatchDayChange(event: Event): void {
+    const matchDay = (event.target as HTMLSelectElement).value;
+    if (matchDay) {
+      this.loadMatches(Number(matchDay));
+    }
+  }
+
+  loadMatches(matchDay: number): void {
+    this.matchService.getMatchesByDay(matchDay).subscribe(
+      (data: Match[]) => {
+        this.matches = data;
+      },
+      (error) => {
+        console.error('Error fetching matches', error);
+      }
+    );
   }
 }

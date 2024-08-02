@@ -10,7 +10,9 @@ import { environment } from '../../src/environments/environment';
 export class MatchService {
   private apiUrl = `${environment.apiUrl}/Matches`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    console.log('API URL:', this.apiUrl); 
+  }
 
   getMatchesByDay(matchDay: number): Observable<Match[]> {
     return this.http.get<Match[]>(`${this.apiUrl}/${matchDay}`);

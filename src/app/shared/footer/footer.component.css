@@ -1,0 +1,56 @@
+.footer {
+  background-color: #002366; /* Replace with your specific blue color */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    margin: 0 15px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Media query for larger screens */
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+
+    p {
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 0;
+    }
+
+    ul {
+      justify-content: flex-end;
+    }
+  }
+}

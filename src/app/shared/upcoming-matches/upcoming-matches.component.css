@@ -1,0 +1,25 @@
+.match-schedule {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.matches-list {
+  margin-top: 20px;
+}
+
+mat-expansion-panel {
+  margin-bottom: 10px;
+}
+
+.mat-form-field {
+  margin-right: 10px;
+}

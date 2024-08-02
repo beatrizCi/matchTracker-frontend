@@ -1,9 +1,34 @@
 .header {
-    background: #003366;
-    color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color:#112461;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header .logo img {
+  height: 50px;
+}
+
+.header nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header nav a {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .spacer {
-    flex: 1 1 auto;
+  .header nav {
+    flex-direction: column;
+    align-items: center;
   }
-  
+}

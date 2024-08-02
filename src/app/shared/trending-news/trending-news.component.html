@@ -1,0 +1,12 @@
+<div class="trending-news">
+  <h2>Trending News</h2>
+  <img class="news" src="/assets/news.jpg" alt="News Image" />
+  <h2>League Highlights & Insights</h2>
+  <div *ngFor="let news of newsList" class="news-item">
+    <img [src]="news.image" alt="News Image" />
+    <div class="news-details">
+      <h3>{{ news.title }}</h3>
+      <p>{{ news.time }}</p>
+    </div>
+  </div>
+</div>
