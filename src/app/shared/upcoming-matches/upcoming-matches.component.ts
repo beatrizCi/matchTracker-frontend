@@ -8,10 +8,6 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import {
-  MatCell,
-  MatHeaderCell,
-  MatHeaderRow,
-  MatTableDataSource,
   MatTableModule,
 } from '@angular/material/table';
 import { MatchService } from '../../../../core/services/match.service';
@@ -22,8 +18,7 @@ import { MatOption, MatSelect } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatToolbarModule, MatToolbarRow } from '@angular/material/toolbar';
-import { MatCard, MatCardContent } from '@angular/material/card';
+import { MatToolbarModule, } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-upcoming-matches',
@@ -31,22 +26,12 @@ import { MatCard, MatCardContent } from '@angular/material/card';
   standalone: true,
   imports: [
     MatExpansionModule,
-    MatFormField,
-    MatSelect,
-    MatLabel,
-    MatOption,
     FormsModule,
     CommonModule,
     FlexLayoutModule,
-    MatToolbarRow,
     MatToolbarModule,
-    MatHeaderCell,
-    MatCell,
-    MatCard,
-    MatCardContent,
-    MatHeaderRow,
-    MatTableModule,
-  ],
+    MatTableModule
+],
   styleUrls: ['./upcoming-matches.component.css'],
 })
 export class UpcomingMatchesComponent implements OnChanges {
@@ -61,7 +46,7 @@ export class UpcomingMatchesComponent implements OnChanges {
       const day = this.matchDay.getDate();
       this.matchService.getMatchesByDay(day).subscribe((matches) => {
         this.matches = matches.sort((a, b) =>
-          b.kickOffTime.localeCompare(a.kickOffTime)
+          b.kickOffTime.getTime() - a.kickOffTime.getTime()
         );
         this.matchesLoaded.emit(this.matches);
       });

@@ -1,56 +1,60 @@
-.footer {
-  background-color: #002366; /* Replace with your specific blue color */
+:host {
+  display: block;
+}
+
+:host ::ng-deep .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   color: white;
   text-align: center;
-  padding: 20px 0;
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  
-  p {
-    margin: 0;
-    padding: 0;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  li {
-    margin: 0 15px;
-  }
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
-
-  /* Media query for larger screens */
-  @media (min-width: 768px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 50px;
-
-    p {
-      margin: 0;
-    }
-
-    nav {
-      margin-top: 0;
-    }
-
-    ul {
-      justify-content: flex-end;
-    }
-  }
+  padding: 20px 40px;
+  background-color: #0a1929 !important;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2) !important;
+  border-top: 1px solid rgba(33, 150, 243, 0.1) !important;
+  transition: all 0.3s ease;
 }
+
+:host ::ng-deep .footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+:host ::ng-deep .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+:host ::ng-deep .footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .footer-links a:hover {
+  background: rgba(33, 150, 243, 0.1);
+  color: #2196f3;
+}
+
+@media (max-width: 768px) {
+  :host ::ng-deep .footer {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  :host ::ng-deep .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  :host ::ng-deep .footer div a {
+    margin: 5px 0;
+  }
+} 

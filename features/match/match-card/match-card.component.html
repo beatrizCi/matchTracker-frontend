@@ -1,9 +1,30 @@
-<mat-card fxFlex="100%" fxFlex.gt-sm="45%" fxFlex.gt-md="30%">
-  <mat-card-header>
-    <mat-card-title>{{ match.teamA }} vs {{ match.teamB }}</mat-card-title>
-    <mat-card-subtitle>{{ match.kickOffTime | date:'short' }}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>Stadium: {{ match.stadium }}</p>
-  </mat-card-content>
-</mat-card>
+<div class="match-card-wrapper">
+  <div class="match-card">
+    <div class="match-left">
+      <div class="match-header">
+        <span class="match-label">Next match</span>
+        <img src="assets/logos/sponsor.jpg" alt="Sponsor" class="sponsor-logo" />
+      </div>
+      <div class="teams">
+        <div class="team">
+          <img [src]="teamALogo" alt="{{ match.teamA }}" />
+          <span>{{ match.teamA }}</span>
+        </div>
+        <div class="vs">VS</div>
+        <div class="team">
+          <img [src]="teamBLogo" alt="{{ match.teamB }}" />
+          <span>{{ match.teamB }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="match-info">
+      <p class="datetime">
+        {{ match.kickOffTime | date: 'fullDate' }},
+        {{ match.kickOffTime | date: 'shortTime' }} CET
+      </p>
+      <p>{{ match.competition }}</p>
+      <p>{{ match.stadium }}</p>
+      <a href="#" class="match-link">🎫 Tickets</a>
+    </div>
+  </div>
+</div>

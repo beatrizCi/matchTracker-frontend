@@ -1,7 +1,2 @@
-<div class="match-list">
-  <div *ngFor="let match of matches" class="match-item">
-    <p>{{ match.teamA }} vs {{ match.teamB }}</p>
-    <p>{{ match.kickOffTime }}</p>
-    <p>{{ match.stadium }}</p>
-  </div>
-</div>
+<div class="match-grid" *ngFor="let match of matches">
+<app-match-card [match]="match"></app-match-card></div>

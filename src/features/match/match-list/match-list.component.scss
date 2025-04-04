@@ -1,0 +1,32 @@
+.match-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+
+  .team {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .team-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+  }
+
+  .vs {
+    font-weight: bold;
+    color: #666;
+    margin: 0 16px;
+  }
+
+  .match-info {
+    text-align: right;
+    color: #666;
+    font-size: 0.9em;
+  }
+} 

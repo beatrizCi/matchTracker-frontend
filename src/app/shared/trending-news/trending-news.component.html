@@ -1,12 +1,42 @@
-<div class="trending-news">
-  <h2>Trending News</h2>
-  <img class="news" src="/assets/news.jpg" alt="News Image" />
-  <h2>League Highlights & Insights</h2>
-  <div *ngFor="let news of newsList" class="news-item">
-    <img [src]="news.image" alt="News Image" />
-    <div class="news-details">
-      <h3>{{ news.title }}</h3>
-      <p>{{ news.time }}</p>
+<div class="trending-news-container">
+  <div class="section-header">
+    <div class="header-content">
+      <h2>Trending News</h2>
+      <div class="header-line"></div>
     </div>
+    <div class="header-actions">
+      <button mat-button class="view-all-btn">
+        <span>View All</span>
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="news-grid">
+    <mat-card *ngFor="let news of newsList" class="news-card" [@cardAnimation]>
+      <div class="news-image-container">
+        <img mat-card-image [src]="news.image" [alt]="news.title">
+        <div class="image-overlay"></div>
+        <div class="category-badge">
+          <mat-icon class="category-icon">{{ getCategoryIcon(news.category) }}</mat-icon>
+          {{ news.category }}
+        </div>
+      </div>
+      <mat-card-content>
+        <div class="content-wrapper">
+          <h3 class="news-title" [matTooltip]="news.title">{{ news.title }}</h3>
+          <p class="news-description">{{ news.description }}</p>
+        </div>
+        <div class="news-footer">
+          <div class="time-container">
+            <mat-icon class="time-icon">access_time</mat-icon>
+            <span class="time">{{ news.time }}</span>
+          </div>
+          <button mat-flat-button color="primary" class="read-more">
+            Read More
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>

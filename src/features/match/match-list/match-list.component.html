@@ -1,0 +1,19 @@
+<mat-list>
+  <mat-list-item *ngFor="let match of matches">
+    <div class="match-item"  id="match-section">
+      <div class="team">
+        <img *ngIf="match.teamALogo" [src]="match.teamALogo" [alt]="match.teamA" class="team-logo">
+        <span>{{ match.teamA }}</span>
+      </div>
+      <div class="vs">VS</div>
+      <div class="team">
+        <img *ngIf="match.teamBLogo" [src]="match.teamBLogo" [alt]="match.teamB" class="team-logo">
+        <span>{{ match.teamB }}</span>
+      </div>
+      <div class="match-info">
+        <div>{{ match.kickOffTime | date:'short' }}</div>
+        <div>{{ match.stadium }}</div>
+      </div>
+    </div>
+  </mat-list-item>
+</mat-list> 

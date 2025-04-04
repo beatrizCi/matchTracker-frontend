@@ -1,11 +1,31 @@
 <div class="header">
-  <div class="logo">
-    <img src="/assets/logo.jpg" alt="Logo">
+  <div class="header-container">
+    <div class="logo">
+      <img src="/assets/logo.jpg" alt="Logo" />
+    </div>
+    <nav fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <a
+        href="#home-section"
+        mat-button
+        routerLink="/"
+        routerLinkActive="active"
+        >Home</a
+      >
+      <a
+        href="#match-section"
+        mat-button
+        routerLink="/matches"
+        routerLinkActive="active"
+        >Matches</a
+      >
+      <a
+        href="#news-section"
+        mat-button
+        routerLink="/news"
+        routerLinkActive="active"
+        >News</a
+      >
+      <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+    </nav>
   </div>
-  <nav fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <a mat-button href="#">Home</a>
-    <a mat-button href="#">Matches</a>
-    <a mat-button href="#">Teams</a>
-    <a mat-button href="#">Contact</a>
-  </nav>
 </div>

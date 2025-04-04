@@ -5,8 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
-import { MatInputModule } from '@angular/material/input';
-import { MatchListComponent } from '../../features/match/match-list/match-list.component';
+import{ MatchListComponent } from '../../features/match/match-list/match-list.component';
 import { MatchService } from '../../core/services/match.service';
 import { Match } from '../../core/models/match.model';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,7 +19,7 @@ import { TrendingNewsComponent } from './shared/trending-news/trending-news.comp
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatchCardComponent } from '../../features/match/match-card/match-card.component';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +30,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatFormFieldModule,
     MatSelectModule,
     MatListModule,
-    MatInputModule,
     MatTableModule,
     FormsModule,
     MatchListComponent,
@@ -44,43 +42,34 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     TrendingNewsComponent,
     FooterComponent,
     FlexLayoutModule,
-    MatDatepickerModule,
     MatNativeDateModule,
+    MatchCardComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   title = 'matchTracker-frontend';
+  selectedDay: number = 1;
   matches: Match[] = [];
-  selectedDate: Date = new Date();
 
   constructor(private matchService: MatchService) {}
 
-  ngOnInit(): void {
-    this.getMatchesByDay(1);
+  ngOnInit() {
+    this.getMatchesByDay(this.selectedDay);
   }
 
-  onMatchDayChange(date: Date): void {
-    const matchDay = this.getMatchDayFromDate(date);
-    this.getMatchesByDay(matchDay);
+  onMatchDayChange(event: Event) {
+    const value = Number((event.target as HTMLSelectElement).value);
+    if (!isNaN(value)) {
+      this.getMatchesByDay(value);
+    }
   }
 
-  getMatchDayFromDate(date: Date): number {
-    const startDate = new Date('2024-08-01');
-    const diffTime = Math.abs(date.getTime() - startDate.getTime());
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays + 1;
-  }
-
-  getMatchesByDay(matchDay: number): void {
-    this.matchService.getMatchesByDay(matchDay).subscribe(
-      (data: Match[]) => {
-        this.matches = data;
-      },
-      (error: any) => {
-        console.error('Error fetching matches', error);
-      }
-    );
+  getMatchesByDay(day: number) {
+    this.matchService.getMatchesByDay(day).subscribe({
+      next: (data: Match[]) => (this.matches = data),
+      error: () => (this.matches = []),
+    });
   }
 }

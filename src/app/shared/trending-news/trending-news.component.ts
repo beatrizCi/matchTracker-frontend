@@ -3,36 +3,90 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { trigger, transition, style, animate } from '@angular/animations';
 
+interface News {
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  timeAgo: string;
+}
 
 @Component({
   standalone: true,
-  imports: [CommonModule, MatCardModule,MatListModule,MatButtonModule],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatListModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatIconModule,
+    MatTooltipModule
+  ],
   selector: 'app-trending-news',
   templateUrl: './trending-news.component.html',
-  styleUrls: ['./trending-news.component.scss']
+  styleUrls: ['./trending-news.component.scss'],
+  animations: [
+    trigger('cardAnimation', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(20px)' }),
+        animate('300ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ])
+  ]
 })
 export class TrendingNewsComponent implements OnInit {
-  newsList: Array<{ image: string, title: string, time: string }> = []; 
-
-  ngOnInit(): void {
+  newsList: { title: string, description: string, category: string, time: string, image: string }[] = [];
+  
+  constructor() { }
+  
+ ngOnInit(): void {
     this.newsList = [
       {
-        image: '/assets/image1.jpg', 
-        title: 'Results And Scores From The Premier League!',
-        time: '5 Hours Ago'
+        title: 'Results and scores from the Premier League',
+        description: 'Sally Jenkins wins the prestigious award for her contributions to sports journalism.',
+        category: 'Club',
+        time: '37 mins ago',
+        image: '/assets/Vencedores.jpg'
       },
       {
-        image: '/assets/image2.jpg',
-        title: 'Here Are The Top 100 Players And Managers',
-        time: '11 Oct 2023, 06:00 AM'
+        title: 'The Best 50 players and managers',
+        description: 'The young talents aim for top achievements this season.',
+        category: 'Club',
+        time: '16 hrs ago',
+        image: '/assets/pega.jpg'
       },
       {
-        image: '/assets/image3.jpg',
-        title: 'Join Or Start A Competition Now!',
-        time: '10 Oct 2023, 09:00 PM'
+        title: 'Tour enters final stretch',
+        description: 'Barcelona\'s pre-season tour is nearing its end with exciting matches.',
+        category: 'First Team',
+        time: '17 hrs ago',
+        image: '/assets/IPTV.jpg'
+
       },
-      
+      {
+        title: 'Classic play-off goals',
+        description: 'Mauro Icardi, Trent Alexander-Arnold and Memphis Depay all feature in this collection of classic strikes from the Champions League play-off round.',
+        category: 'Club',
+        time: '22 hrs ago',
+        image: '/assets/Soccer.jpg'
+
+      }
     ];
+  }
+
+  getCategoryIcon(category: string): string {
+    const iconMap: { [key: string]: string } = {
+      'Club': 'sports_soccer',
+      'First Team': 'group',
+      'Transfer': 'swap_horiz',
+      'Match': 'sports',
+      'News': 'article'
+    };
+    return iconMap[category] || 'article';
   }
 }
