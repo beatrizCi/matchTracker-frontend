@@ -1,31 +1,136 @@
-<<<<<<< HEAD
-# MatchTrackerFrontend
+# MatchTracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
+Welcome to the MatchTracker project! This project is built with Angular for the frontend and C# (ASP.NET Core) for the backend. The database used is SQLite.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Features](#features)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **View Matches**: Users can view matches for selected dates.
+- **Date Selection**: Users can select a date to filter matches.
+- **Detailed Match View**: Detailed view of the selected match.
+- **Trending News**: Display trending news related to matches.
+- **Responsive Design**: Fully responsive design using Angular Flex Layout.
 
-## Build
+## Setup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
 
-## Running unit tests
+- Node.js (>= 14.x)
+- Angular CLI (>= 12.x)
+- npm or yarn
+- .NET 6 SDK
+- SQLite
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installation
 
-## Running end-to-end tests
+#### Backend
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. **Clone the repository:**
 
-## Further help
+    ```bash
+    git clone https://github.com/your-username/matchtracker.git
+    cd matchtracker
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# matchTracker-frontend
->>>>>>> 39ae40ada37d9e4694d88e1aaf337e7452fed8fb
+2. **Navigate to the backend project directory:**
+
+    ```bash
+    cd MatchTracker.API
+    ```
+
+3. **Install dependencies and build the project:**
+
+    ```bash
+    dotnet restore
+    dotnet build
+    ```
+
+4. **Set up the database:**
+
+    ```bash
+    dotnet ef database update
+    ```
+
+5. **Run the application:**
+
+    ```bash
+    dotnet run
+    ```
+
+    The backend API will be available at `https://localhost:7286/api`.
+
+#### Frontend
+
+1. **Navigate to the frontend project directory:**
+
+    ```bash
+    cd matchtracker-frontend
+    ```
+
+2. **Install dependencies:**
+
+    Using npm:
+
+    ```bash
+    npm install
+    ```
+
+    Using yarn:
+
+    ```bash
+    yarn install
+    ```
+
+3. **Set up environment variables:**
+
+    Create an environment file `src/environments/environment.ts` with the following content:
+
+    ```typescript
+    export const environment = {
+      production: false,
+      apiUrl: 'https://localhost:7286/api'
+    };
+    ```
+
+4. **Run the application:**
+
+    Using npm:
+
+    ```bash
+    npm start
+    ```
+
+    Using yarn:
+
+    ```bash
+    yarn start
+    ```
+
+5. **Open the application in your browser:**
+
+    Navigate to `http://localhost:4200`.
+
+## Usage
+
+### Viewing Matches
+
+1. **Select a Date:**
+    - Use the date picker to select a date.
+    - The matches for the selected day will be displayed in descending order by kick-off time.
+
+2. **Match Details:**
+    - Click on a match to view detailed information including teams, kick-off time, and stadium.
+
+### Trending News
+
+- View the latest news related to matches on the right side of the screen.
+
