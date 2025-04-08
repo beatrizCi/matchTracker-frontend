@@ -18,7 +18,7 @@
         color: #ffffff;
         margin-bottom: 0.75rem;
         letter-spacing: -0.5px;
-        background: linear-gradient(90deg, #ffffff, #2196f3);
+        background: linear-gradient(90deg, #ffffff, #b6ff1c);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -26,26 +26,25 @@
       .header-line {
         width: 80px;
         height: 4px;
-        background: linear-gradient(90deg, #2196f3, #1565c0);
+        background: linear-gradient(90deg,#ffffff, #b6ff1c);
         border-radius: 2px;
       }
     }
 
     .header-actions {
       .view-all-btn {
-        color: #2196f3;
+        color: #b6ff1c;
         font-weight: 500;
         display: flex;
         align-items: center;
         gap: 0.5rem;
         padding: 0.5rem 1rem;
-        border: 1px solid rgba(33, 150, 243, 0.3);
         border-radius: 8px;
         transition: all 0.3s ease;
 
         &:hover {
-          background: rgba(33, 150, 243, 0.1);
-          border-color: #2196f3;
+          background: #b6ff1c(33, 150, 243, 0.1);
+          border-color: #b6ff1c;
         }
 
         mat-icon {
@@ -90,7 +89,7 @@
     &:hover {
       transform: translateY(-8px);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-      border-color: rgba(33, 150, 243, 0.3);
+      border-color: #b6ff1c(33, 150, 243, 0.1);
 
       .news-image-container img {
         transform: scale(1.05);
@@ -128,8 +127,8 @@
         position: absolute;
         top: 1rem;
         right: 1rem;
-        background: rgba(33, 150, 243, 0.9);
-        color: white;
+        background: white ;
+        color: black;
         padding: 0.5rem 1rem;
         border-radius: 25px;
         font-size: 0.875rem;
@@ -154,7 +153,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      background: rgba(255, 255, 255, 0.02);
+      background: rgb#b6ff1c(255, 255, 255, 0.02);
 
       .content-wrapper {
         flex: 1;
@@ -210,8 +209,8 @@
         }
 
         .read-more {
-          background: #2196f3;
-          color: white;
+          background:white;
+          color: black;
           font-weight: 500;
           text-transform: uppercase;
           letter-spacing: 0.5px;
@@ -231,7 +230,7 @@
           }
 
           &:hover {
-            background: #1976d2;
+            background:white ;
             mat-icon {
               transform: translateX(4px);
             }
