@@ -1,0 +1,51 @@
+
+.gradient-header {
+  background-image: url('/assets/stats.jpg'); // ← the leading slash matters
+  padding: 60px 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: webkit-fill-available;
+  height: 25%;
+}
+
+
+
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background-color:#1a1a1a;
+    color: #f5f7fa;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .stats-table img {
+    vertical-align: middle;
+    border-radius: 50%;
+  }
+  
+  .stats-table thead {
+    background-color: #191919;
+    color: #B6FF1C;
+  }
+  
+  .stats-table th,
+  .stats-table td {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 600px) {
+    .gradient-header {
+      padding: 40px 10px;
+    }
+  
+    .gradient-header h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  
+  
+ 

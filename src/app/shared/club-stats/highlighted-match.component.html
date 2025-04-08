@@ -1,0 +1,31 @@
+<header class="gradient-header">
+  <div class="header-content">
+  </div>
+</header>
+
+
+<table class="stats-table">
+ 
+  
+    <thead>
+      <tr>
+        <th>Club</th>
+        <th>Country</th>
+        <th>Played</th>
+        <th>Won</th>
+        <th>Drawn</th>
+        <th>Lost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let club of stats">
+        <td>{{ club.clubName }}</td>
+        <td>{{ club.country }}</td>
+        <td>{{ club.matchesPlayed }}</td>
+        <td>{{ club.won }}</td>
+        <td>{{ club.drawn }}</td>
+        <td>{{ club.lost }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

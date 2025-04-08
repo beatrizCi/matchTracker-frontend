@@ -9,7 +9,7 @@ import{ MatchListComponent } from '../../features/match/match-list/match-list.co
 import { MatchService } from '../../core/services/match.service';
 import { Match } from '../../core/models/match.model';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { HighlightedMatchComponent } from './shared/highlighted-match/highlighted-match.component';
+import { HighlightedMatchComponent } from './shared/club-stats/highlighted-match.component';
 import { UpcomingMatchesComponent } from './shared/upcoming-matches/upcoming-matches.component';
 import { MainBannerComponent } from './shared/main-banner/main-banner.component';
 import { SharedModule } from '../../shared/shared.module';
@@ -34,7 +34,6 @@ import { MatchCardComponent } from '../../features/match/match-card/match-card.c
     FormsModule,
     MatchListComponent,
     MatToolbarModule,
-    HighlightedMatchComponent,
     UpcomingMatchesComponent,
     MainBannerComponent,
     SharedModule,
@@ -44,6 +43,7 @@ import { MatchCardComponent } from '../../features/match/match-card/match-card.c
     FlexLayoutModule,
     MatNativeDateModule,
     MatchCardComponent,
+    HighlightedMatchComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],

@@ -32,7 +32,7 @@ import { MatToolbarModule, } from '@angular/material/toolbar';
     MatToolbarModule,
     MatTableModule
 ],
-  styleUrls: ['./upcoming-matches.component.css'],
+  styleUrls: ['./upcoming-matches.component.scss'],
 })
 export class UpcomingMatchesComponent implements OnChanges {
   @Input() matchDay!: Date;

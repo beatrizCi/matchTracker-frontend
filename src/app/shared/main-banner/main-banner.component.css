@@ -4,10 +4,10 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background: url('/assets/bg.png') no-repeat center center;
+  background: url('/assets/landing.jpg') no-repeat center center;
   background-size: contain;
   background-position: top center;
-  background-color: #003E52;
+  background-color: #191919;
 
   padding: 0;
   margin: 0;
@@ -17,47 +17,44 @@
 
 .banner-content {
   position: absolute;
-  top: 32%;
+  bottom: 8%; /* ⬅️ Move to bottom */
   left: 8%;
   z-index: 2;
   text-align: left;
   max-width: 500px;
-  justify-content: end;
 
-  h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    color: #000;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.cta-button {
+  display: contents;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: #ccff00; /* neon green */
+  color: #000;
+  border: none;
+  border-radius: 0 1rem 1rem 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  margin-left: auto;
 
-  p {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #222;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-  }
-
-  .cta-button {
-    font-size: 1.1rem;
-    padding: 0.75rem 2rem;
-    background: rgba(33, 150, 243, 0.1);
-    color: #ffff;
-    border: 2px solid #000;
-    border-radius: 40px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    justify-content: end !important;
-    &:hover {
-      background-color: #fff;
-      color: #000;
-    }
-  }
 }
 
+.cta-button:hover {
+  transform: translateY(-2px);
+  background-color: #aaff00;
+}
 
+html {
+  scroll-behavior: smooth;
+}
 
 
 .subtitle {

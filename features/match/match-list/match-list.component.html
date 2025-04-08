@@ -1,2 +1,18 @@
-<div class="match-grid" *ngFor="let match of matches">
-<app-match-card [match]="match"></app-match-card></div>
+<div class="match-grid">
+    <div class="matchday-selector">
+        <label for="matchday">Choose a match day:</label>
+        <select id="matchday">
+          <option value="1">Day 1</option>
+          <option value="2">Day 2</option>
+          <option value="3">Day 3</option>
+        </select>
+      </div>
+      
+  
+    <ng-template #noMatches>
+      <div class="no-matches-message">
+        No matches available for this day.
+      </div>
+    </ng-template>
+  </div>
+  
