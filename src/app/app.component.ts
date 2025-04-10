@@ -20,6 +20,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatchCardComponent } from '../../features/match/match-card/match-card.component';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
@@ -44,9 +45,10 @@ import { MatchCardComponent } from '../../features/match/match-card/match-card.c
     MatNativeDateModule,
     MatchCardComponent,
     HighlightedMatchComponent,
+    MatIcon,
   ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   title = 'matchTracker-frontend';

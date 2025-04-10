@@ -4,8 +4,12 @@
   <main class="main">
     <div class="content">
       <app-main-banner></app-main-banner>
-      <div class="match-day-selector">
-        <label for="matchDay">Choose a match day:</label>
+      <div class="section-header">
+        <div class="header-content">
+          <h2>Choose a match Day</h2>
+          <div class="header-line"></div>
+        </div>
+      </div>
         <select
           id="match-section"
           [(ngModel)]="selectedDay"
@@ -21,12 +25,14 @@
           [match]="match"
         ></app-match-card>
       </div>
+      <div class="stats-section">
+      <section id="stats-section"></section>
       <app-highlighted-match></app-highlighted-match>
+    </div>
       <div class="trending-news-section">
         <section id="news-section"></section>
         <app-trending-news></app-trending-news>
       </div>
-    </div>
     <app-about-us></app-about-us>
   </main>
   <app-footer></app-footer>

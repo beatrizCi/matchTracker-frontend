@@ -1,8 +1,28 @@
-.gradient-header {
-  background-color: #1a1a1a;
-  padding: 60px 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  height: 25%;
+.section-header {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .header-content {
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #ffffff, #b6ff1c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-line {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg,#ffffff, #b6ff1c);
+      border-radius: 2px;
+    }
+  }
 }
 
 .stats-table {

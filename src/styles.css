@@ -6,7 +6,7 @@ html {
   height: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
-  background-color: #0a1929;
+  background-color: #191919;
   color: #ffffff;
 }
 
@@ -23,7 +23,7 @@ body {
 h1,
 h2,
 h3 {
-  background: linear-gradient(90deg, #ffffff, #2196f3);
+  background: linear-gradient(90deg,#f9faf9, #0ad80a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.75rem;

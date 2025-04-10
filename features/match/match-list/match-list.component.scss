@@ -16,24 +16,21 @@ body {
   gap: 0.5rem;
   padding: 0.75rem 1rem;
   border-radius: 10px;
-  color: #fff;
+  color: #00ff90;
   font-weight: 500;
   max-width: fit-content;
-  margin: 1rem auto; /* Center it if needed */
+  margin: 1rem auto; 
+}
+.h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+ color:  #b6ff1c;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-
-.matchday-selector select {
-  background-color: #191919;
-  color: #00ff90;
-  border: 1px solid #333;
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  appearance: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
 .matchday-selector select:hover,
 .matchday-selector select:focus {
@@ -60,7 +57,7 @@ body {
   text-align: center;
   padding: 2rem;
   font-weight: 500;
-  background-color: #1b263b;
+  background-color: #191919;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
@@ -152,7 +149,7 @@ body {
       gap: 0.4rem;
       margin-top: 1rem;
       text-decoration: none;
-      color: #4ea8ff;
+      color: #00ff90;
       font-weight: 500;
 
       &:hover {

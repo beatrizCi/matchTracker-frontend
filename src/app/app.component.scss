@@ -3,12 +3,38 @@ html, body, app-root {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #191919;
+
 }
 
 .content {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-
+  background-color: #191919;
 } 
+.section-header {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  
+  .header-content {
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #ffffff, #b6ff1c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
+    .header-line {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg,#ffffff, #b6ff1c);
+      border-radius: 2px;
+    }
+  }
+}

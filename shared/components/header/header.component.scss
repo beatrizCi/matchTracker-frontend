@@ -6,7 +6,7 @@
   width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(33, 150, 243, 0.1);
+  border-bottom: 1px solid rgba(234, 237, 239, 0.1);
 
   .header-container {
     max-width: 1200px;
@@ -48,7 +48,7 @@
 
       &:hover {
         background: rgba(33, 150, 243, 0.1);
-        color: #2196f3;
+        color: #e3e6ea;
       }
 
       &.active {
